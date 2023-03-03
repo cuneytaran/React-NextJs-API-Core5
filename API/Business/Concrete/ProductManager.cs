@@ -52,10 +52,12 @@ namespace Business.Concrete
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);        
                 _logger.Log();
                 throw;
             }
-            return new ErrorResult(Messages.ProductAdded);
+
+            // return new ErrorResult(Messages.ProductAdded);
 
             //IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName), 
             //    CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceded());

@@ -1,5 +1,6 @@
 ﻿using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using System;
 using System.Transactions;
 
 namespace Core.Aspects.Autofac.Transaction
@@ -17,6 +18,7 @@ namespace Core.Aspects.Autofac.Transaction
                 }
                 catch (System.Exception e)
                 {
+                   Console.WriteLine(e.Message);
                     transactionScope.Dispose();
                     throw;
                 }
